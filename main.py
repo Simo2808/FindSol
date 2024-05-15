@@ -28,7 +28,7 @@ def main(page: ft.Page):
 
     page.appbar = ft.AppBar(
         title=ft.Text(
-            "Floating Action Button", weight=ft.FontWeight.BOLD, color=ft.colors.BLACK87
+            "Floating Action Button", color=ft.colors.BLACK87
         ),
         bgcolor=ft.colors.BLUE,
         center_title=True,
