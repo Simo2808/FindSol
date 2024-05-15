@@ -1,48 +1,11 @@
 import flet as ft
-import firstDegree as fd
 
 
-#definizioni di tutte le funzioni
-
-
-
-
-
-
-#main
-
-def main(page: ft.Page):
+def first(page: ft.Page):
 
    # page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.auto_scroll = True
     page.scroll = ft.ScrollMode.HIDDEN
-
-    def route_change(e: ft.RouteChangeEvent):
-        page.add(e.route)
-
-    def prova_button(e):
-        page.route = "/firstDegree"
-
-        
-
-
-    page.appbar = ft.AppBar(
-        title=ft.Text(
-            "Floating Action Button", weight=ft.FontWeight.BOLD, color=ft.colors.BLACK87
-        ),
-        bgcolor=ft.colors.BLUE,
-        center_title=True,
-        actions=[
-            ft.IconButton(ft.icons.MENU, tooltip="Menu", icon_color=ft.colors.BLACK87)
-        ],
-        color=ft.colors.WHITE,
-    )
-
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.icons.ADD, bgcolor="#556ad0"
-    )
-
 
     page.adaptive = True
     page.bgcolor = "white"
@@ -78,7 +41,7 @@ def main(page: ft.Page):
             maintain_state=False,
             collapsed_text_color=ft.colors.WHITE,
             text_color=ft.colors.WHITE,
-            controls=[ft.ListTile(title=ft.TextButton("Primo Grado", on_click=prova_button, data=0))],
+            controls=[ft.ListTile(title=ft.TextButton("Primo Grado", data=0))],
             bgcolor="#556ad0",
         ),
 
@@ -101,21 +64,9 @@ def main(page: ft.Page):
         ft.SafeArea( 
             ft.Column(
                 [
-                    
+                    ft.Text("Equazioni di PRIMO GRADO")
                 ]
             )
         ),
        page.appbar
     )
-
-    page.on_route_change = route_change
-
-
-
-
-
-
-
-
-ft.app(target=main)
-
